@@ -6,7 +6,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.post('/lorem', (req, res) => {
+    let custom = req.body.text;
     let quote;
+    console.log('custom', custom);
     if (custom && !isNaN(custom)) {
         quote = getText(parseInt(custom));
     } else {
