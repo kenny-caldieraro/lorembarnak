@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-import { getText } from 'lorembarnak';
+const { getText } = require('lorembarnak');
 
 app.use(express.json());
 
