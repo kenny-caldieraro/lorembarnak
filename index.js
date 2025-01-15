@@ -6,13 +6,13 @@ app.use(express.json());
 
 app.post('/lorem', (req, res) => {
     console.log(req.body);
-    const custom = req.body.text;
+    // const custom = req.body.text;
     let quote;
-    if (custom.length > 0) {
-        quote = getText(parseInt(custom));
-    } else {
-        quote = getText();
-    }
+    // if (custom.length > 0) {
+    // quote = getText(parseInt(custom));
+    // } else {
+    quote = getText();
+    // }
 
     res.json({
         response_type: 'in_channel',
