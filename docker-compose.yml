@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        image: lorem_barnak
+        stdin_open: true
+        tty: true
+        expose:
+            - 3000
+        labels:
+            - traefik.http.routers.lorem_barnak.rule=Host(`lorembarnak.useless-therefore-essential.fr`)
+            - traefik.http.routers.lorem_barnak.tls=true
+            - traefik.http.routers.lorem_barnak.tls.certresolver=lets-encrypt
+            - traefik.port=80
+        networks:
+            - lorem_barnak
+            - web
+
+networks:
+    lorem_barnak:
+        name: lorem_barnak
+
+    web:
+        external: true
