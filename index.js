@@ -5,6 +5,7 @@ const { getText } = require('lorembarnak');
 app.use(express.json());
 
 app.post('/lorem', (req, res) => {
+    console.log(req.body);
     const custom = req.body.text.trim();
     let quote;
     if (custom.length > 0) {
