@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.post('/lorem', (req, res) => {
     console.log(req.body);
-    const custom = req.body.text.trim();
+    const custom = req.body.text;
     let quote;
     if (custom.length > 0) {
         quote = getText(parseInt(custom));
